@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Julee&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+
+
+@media(max-width:580px){
+ h1{
+    font-size: 23px!important;
+ }
+}
+
+/* desktop ----------------------------------*/
+
+body {
+        
+    background: url("images/indian-condiments-with-copy-space-view.jpg");
+    background-size: cover;
+}
+
+.btn-group{
+    background-color:#000000;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1 {
+    position: relative;
+    /* height: 24vh; */
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom: solid #EC9831;
+}
+
+.section2{
+    position: relative;
+    /* height: 24vh; */
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+h1 {
+    font-family: 'Julee', cursive;
+    position: relative;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+}
+
+a.signout{
+    color: #000000;
+
+}
+
+a.signout:hover{
+    color: #000000;
+}
+
+.menubg{
+    justify-content: center;
+    display:block;
+    position: relative;
+    width: 230px;
+    height: 90px;
+    top: 1.5em;
+    z-index: 0;
+    background: #EC9831;
+    border-radius: 50px;
+} 
+.profile{
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    border-radius:50%;
+    max-width: 50px;
+}
+.profiledrop img{
+    position: relative;
+    width: 50px;
+    border-radius: 50%;
+}
+.menubg h3{
+    position: relative;
+    /* width: 276px; */
+    height: 115px;
+    bottom: 0.27em;
+    /* left: 583px; */
+    /* top: 291px; */
+    font-family: 'Hi Melody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 112px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin:auto;
+    line-height:51px;
+    vertical-align:middle;
+    color: #FFFFFF;
+    z-index: 3;
+}
+
+.items{     
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+
+}
+.starters{
+    position: relative;
+    /* width: 519px;
+    height: 155px; */
+    /* left: 428px; */
+    /* top: -15px; */
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 34px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+    z-index: 3;
+    
+    text-shadow: 3px 3px black;
+}
+
+.drinks{
+    position: relative;
+    /* width: 519px;
+    height: 155px; */
+    /* left: 428px; */
+    /* top: -15px; */
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 34px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+    z-index: 3;
+    
+    text-shadow: 3px 3px black;
+}
+
+.pizzas{
+    position: relative;
+    /* width: 519px;
+    height: 155px; */
+    /* left: 428px; */
+    /* top: -15px; */
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 34px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+    z-index: 3;
+    
+    text-shadow: 3px 3px black;
+}
+
+.burgers{
+    position: relative;
+    /* width: 519px;
+    height: 155px; */
+    /* left: 428px; */
+    /* top: -15px; */
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 34px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+    z-index: 3;
+    
+    text-shadow: 3px 3px black;
+}
+
+.drinks{
+    position: relative;
+    /* width: 519px;
+    height: 155px; */
+    /* left: 428px; */
+    /* top: -15px; */
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 34px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+    z-index: 3;
+    
+    text-shadow: 3px 3px black;
+}
+
+.maincourse{
+    position: relative;
+    /* width: 519px;
+    height: 155px; */
+    /* left: 428px; */
+    /* top: -15px; */
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 34px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+    z-index: 3;
+    
+    text-shadow: 3px 3px black;
+}
+
+.desserts{
+    position: relative;
+    /* width: 519px;
+    height: 155px; */
+    /* left: 428px; */
+    /* top: -15px; */
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 34px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+    z-index: 3;
+    text-shadow: 3px 3px black;
+}
+
+.combo{
+    position: relative;
+    /* width: 519px;
+    height: 155px; */
+    /* left: 428px; */
+    /* top: -15px; */
+    justify-content: center;
+    font-family: 'Julee';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 34px;
+    line-height: 75px;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom: 100px;
+    color: #FFFFFF;
+    z-index: 3;
+    
+    text-shadow: 3px 3px black;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.items ul{
+    list-style: none;
+    padding: 30px;
+    margin: 0;
+    
+}
+
+.container > head {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+    zoom: 1; /* Trigger hasLayout */
+    width: 33%;
+    text-align: center;
+}
+
+img {
+    /* left: 40%; */
+    width: 10em;
+    height: auto;
+}
+
+.bordernone:focus{
+    outline: none;
+    border:none;
+    background:none;
+
+}
+
+.bordernone{
+    outline: none;
+    border:none;
+}
+
+.dropdown-menu{
+    --bs-dropdown-min-width: 4rem!important;
+}
+
+.items a:hover{
+    color: #EC9831;
+    
+}
+
+.items li{
+    text-shadow: 1px #EC9831;
+}

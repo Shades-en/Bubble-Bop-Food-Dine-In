@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Bubble-Bop</title>
+    {% load static %}
+    {% load filters %} 
+    <link rel="stylesheet" href="{% static 'dineIn/food_menu.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+<body>
+  <div>
+
+    
+    <section class="section1 center" id="section1">
+      <div class="logomain">
+          
+          <img src="{% static 'dineIn/images/BUBBLE BOP.png' %}" alt="logo">
+      </div>
+      <h1>Bubble Bop</h1>
+        <div class="profiledrop">
+      <div class="btn-group" >
+          <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              
+              <img src="{% static 'dineIn/images/user.jpg' %}" alt="profile">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+              <li><button class="dropdown-item center" type="button">Username</button></li>
+              <li><button class="dropdown-item center" type="button">Table No.</button></li>
+              <li><button class="dropdown-item center" type="button">
+                <form><input type="submit" value="SignOut" class="bordernone center"/></form>
+              </button></li>
+          </ul>
+      </div>
+    </section>
+
+    <!-- line break---------------------- -->
+
+    <form id="cart-submit" method="POST">
+      {% csrf_token %}
+      <section class="foodsec" id="starters">
+          <div>
+              <H2>STARTERS</H2>
+          </div>
+          <ul class="cards">
+              {% for item in menu.starters %}
+              <section>
+              <li>
+                <a href="" class="card">
+                  <img src="{{item.image}}" class="card__image" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                      {% if item.type == "veg" %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
+                      {% else %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
+                      {% endif %}
+                      <div class="card__header-text">
+                        <h3 class="card__title">{{item.name}}</h3>            
+                        <span class="card__status">{{item.price}}</span>
+                      </div>
+                      
+                    </div>
+                    <p class="card__description">{{item.description}}</p>
+                  </div>
+                </a>      
+              </li>
+              <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> 
+                 <span class="pe-3"> <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
+              </div>
+              </section>
+              {% endfor %}
+          </ul>
+      </section>
+      <!-- {{item.name}} -->
+
+      <section class="foodsec" id="main_course">
+        <div>
+            <H2>Main Course</H2>
+        </div>
+        <ul class="cards">
+            {% for item in menu.main_course %}
+            <section>
+            <li>
+              <a href="" class="card">
+                <img src="{{item.image}}" class="card__image" alt="" />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                    {% if item.type == "veg" %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
+                    {% else %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
+                    {% endif %}
+                    <div class="card__header-text">
+                      <h3 class="card__title">{{item.name}}</h3>            
+                      <span class="card__status">{{item.price}}</span>
+                    </div>
+                  </div>
+                  <p class="card__description">{{item.description}}</p>
+                </div>
+              </a>      
+             </li>
+             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;">  <span class="pe-3"> <input name = {{ item|private:"_id" }} 
+                    class="ps-2" type="checkbox"></span>
+            </div>
+            </section>
+            {% endfor %}
+        </ul>
+      </section>
+
+
+      <section class="foodsec" id="deserts">
+        <div>
+            <H2>Desserts</H2>
+        </div>
+        <ul class="cards">
+            {% for item in menu.deserts %}
+            <section>
+            <li>
+              <a href="" class="card">
+                <img src="{{item.image}}" class="card__image" alt="" />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                    {% if item.type == "veg" %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
+                    {% else %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
+                    {% endif %}
+                    <div class="card__header-text">
+                      <h3 class="card__title">{{item.name}}</h3>            
+                      <span class="card__status">{{item.price}}</span>
+                    </div>
+                    
+                  </div>
+                  <p class="card__description">{{item.description}}</p>
+                </div>
+              </a>      
+             </li>
+             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <<span class="pe-3"> <input name = {{ item|private:"_id" }}
+                    class="ps-2" type="checkbox"></span>
+            </div>
+            </section>
+            {% endfor %}
+        </ul>
+      </section>
+
+
+      <section class="foodsec" id="drinks">
+        <div>
+            <H2>Drinks</H2>
+        </div>
+        <ul class="cards">
+            {% for item in menu.drinks %}
+            <section>
+            <li>
+              <a href="" class="card">
+                <img src="{{item.image}}" class="card__image" alt="" />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                    {% if item.type == "veg" %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
+                    {% else %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
+                    {% endif %}
+                    <div class="card__header-text">
+                      <h3 class="card__title">{{item.name}}</h3>            
+                      <span class="card__status">{{item.price}}</span>
+                    </div>
+                    
+                  </div>
+                  <p class="card__description">{{item.description}}</p>
+                </div>
+              </a>      
+             </li>
+             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;">  <span class="pe-3"> <input name = {{ item|private:"_id" }}
+                    class="ps-2" type="checkbox"></span>
+            </div>
+            </section>
+            {% endfor %}
+        </ul>
+      </section>
+
+      <section class="foodsec" id="combo">
+        <div>
+            <H2>Combos</H2>
+        </div>
+        <ul class="cards">
+            {% for item in menu.combo %}
+            <section>
+            <li>
+              <a href="" class="card">
+                <img src="{{item.image}}" class="card__image" alt="" />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                    {% if item.type == "veg" %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
+                    {% else %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
+                    {% endif %}
+                    <div class="card__header-text">
+                      <h3 class="card__title">{{item.name}}</h3>            
+                      <span class="card__status">{{item.price}}</span>
+                    </div>
+                    
+                  </div>
+                  <p class="card__description">{{item.description}}</p>
+                </div>
+              </a>      
+             </li>
+             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <span class="pe-3"> <input name = {{ item|private:"_id" }}
+                    class="ps-2" type="checkbox"></span>
+            </div>
+            </section>
+            {% endfor %}
+        </ul>
+      </section>
+
+
+      <section class="foodsec" id="pizza">
+        <div>
+            <H2>Pizza</H2>
+        </div>
+        <ul class="cards">
+            {% for item in menu.pizza %}
+            <section>
+            <li>
+              <a href="" class="card">
+                <img src="{{item.image}}" class="card__image" alt="" />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                    {% if item.type == "veg" %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
+                    {% else %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
+                    {% endif %}
+                    <div class="card__header-text">
+                      <h3 class="card__title">{{item.name}}</h3>            
+                      <span class="card__status">{{item.price}}</span>
+                    </div>
+                    
+                  </div>
+                  <p class="card__description">{{item.description}}</p>
+                </div>
+              </a>      
+             </li>
+             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <span class="pe-3"> <input name = {{ item|private:"_id" }}
+                    class="ps-2" type="checkbox"></span>
+            </div>
+            </section>
+            {% endfor %}
+        </ul>
+      </section>
+
+      <section class="foodsec" id="burger">
+        <div>
+            <H2>Burger</H2>
+        </div>
+        <ul class="cards">
+            {% for item in menu.burger %}
+            <section>
+            <li>
+              <a href="" class="card">
+                <img src="{{item.image}}" class="card__image" alt="" />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                    {% if item.type == "veg" %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
+                    {% else %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
+                    {% endif %}
+                    <div class="card__header-text">
+                      <h3 class="card__title">{{item.name}}</h3>            
+                      <span class="card__status">{{item.price}}</span>
+                    </div>
+                    
+                  </div>
+                  <p class="card__description">{{item.description}}</p>
+                </div>
+              </a>      
+             </li>
+             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"><span class="pe-3"> <input name = {{ item|private:"_id" }}py
+                    class="ps-2" type="checkbox"></span>
+            </div>
+            </section>
+            {% endfor %}
+        </ul>
+      </section>
+
+
+           <!-- golden------------------------------------- -->
+
+    
+
+    <!-- line break------------------------------- -->
+     
+    <div class="dropup foodcat">
+      <button class="dropbtn">
+          <img src="{% static 'dineIn/images/category.jpeg' %}" alt="menu">
+      </button>
+
+      <div class="dropup-content">
+        <a href="{% url 'food_menu' user.tableNo %}#drinks">
+          DRINKS
+        </a>
+        <a href="{% url 'food_menu' user.tableNo %}#burger">
+          BURGERS
+        </a>
+        <a href="{% url 'food_menu' user.tableNo %}#pizza">
+          PIZZAS
+        </a>
+        <a href="{% url 'food_menu' user.tableNo %}#combo">
+          COMBOS
+        </a>
+        <a href="{% url 'food_menu' user.tableNo %}#deserts">
+          DESSERTS
+        </a>
+        <a href="{% url 'food_menu' user.tableNo %}#main_course">
+          MAIN COURSE
+        </a>
+        <a href="{% url 'food_menu' user.tableNo %}#starters">
+          STARTERS
+        </a>
+      </div>
+    </div>
+       
+            <div class="cart">
+                
+                 <a href="#" onclick="myFunction()">
+                    <img src="{% static 'dineIn/images/cart.png' %}" alt="cart">
+                 </a>
+                 <!-- <input type="submit" value="Cart" > -->
+                </form>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+            <script>
+                function myFunction() {
+                    document.getElementById("cart-submit").submit();
+                }
+            </script>
+
+  </div>
+</body>
+</html>

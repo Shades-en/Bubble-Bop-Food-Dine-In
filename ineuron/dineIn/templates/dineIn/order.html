@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order | Bubble Bop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dineIn/order.css' %}">
+</head>
+<body>
+    <div >
+        <section class="section1 center" id="section1">
+            <div class="logomain">
+                {% load static %}
+                <img src="{% static 'dineIn/images/BUBBLE BOP.png' %}" alt="logo">
+            </div>
+            <h1>Bubble Bop</h1>
+            <div class="profiledrop">
+            <div class="btn-group" >
+                <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{% static 'dineIn/images/user.jpg' %}" alt="profile">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li ><button class="dropdown-item center" type="button">{{user.name}}</button></li>
+                    <li><button class="dropdown-item center" type="button">Table No. {{user.tableNo}}</button></li>
+                    <li><button class="dropdown-item center" type="button"><a href="{% url 'delete' user.tableNo %}"  class="bordernone center signout"/>Sign Out</button></li>
+                </ul>
+            </div>
+            </section>
+        <section class="section2" id="section2">
+        <div class="menubg">
+            <h3 class="center">Menu</h3>
+        </div>
+        </section>
+        <div class="items">
+                <ul>
+                    <li class="starters center"><a href="{% url 'food_menu' user.tableNo %}#starters">
+                        STARTERS
+                    </a></li>
+                    <li class="maincourse center"><a href="{% url 'food_menu' user.tableNo %}#main_course">
+                        MAIN COURSE
+                    </a></li>
+                    <li class="desserts center"><a href="{% url 'food_menu' user.tableNo %}#deserts">
+                        DESSERTS
+                    </a></li>
+                    <li class="combo center"><a href="{% url 'food_menu' user.tableNo %}#combo">
+                        COMBO
+                    </a></li>
+                    <li class="pizzas center"><a href="{% url 'food_menu' user.tableNo %}#pizza">
+                        PIZZAS 
+                    </a></li>
+                    <li class="burgers center"><a href="{% url 'food_menu' user.tableNo %}#burger">
+                        BURGERS
+                    </a></li>
+                    <li class="drinks center"><a href="{% url 'food_menu' user.tableNo %}#drinks">
+                        DRINKS
+                    </a></li>
+                </ul>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </div>
+
+</body>
+</html>
