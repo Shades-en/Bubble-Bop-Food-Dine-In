@@ -61,6 +61,12 @@ small {
     border-radius: 5px
 }
 
+tr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 td {
     vertical-align: middle
 }
@@ -117,9 +123,12 @@ input:focus {
     border: 1px solid #ccc;
     border-radius: 50%
 }
+
+
 .pb-2{
     font-size: 40px;
     color: rgb(0, 0, 0);
+    padding-bottom: 1.5rem!important;
 }
 .fis
 {
@@ -141,15 +150,12 @@ input:focus {
         border: none;
         border-radius: 8px;
         padding: 15px;
-        /* padding-left: 215px; */
         justify-content:center;
         font-family: 'Rubik', sans-serif;
         cursor: pointer;
         text-transform: uppercase;
         background: #e8e9ec;
         color: #777;
-        /* border-bottom-left-radius: 4px;
-        border-bottom-right-radius: ; */ 
         letter-spacing: 0.2px;
         outline: 0;
         -webkit-transition: all .3s;
@@ -158,4 +164,30 @@ input:focus {
 
 .payd:hover{
     color: #9807ec;
+}
+
+.payment-summary p{
+    line-height: initial;
+}
+
+
+
+.price, .quantity{
+    width: 25%!important;
+    border: none;
+    text-align: right;
+}
+
+.amount{
+    border: none;
+    text-align: right;
+    width: 20%!important
+}
+
+.quantity{
+    text-align: right;
+}
+
+#price, #tax, #final, #total{
+    text-align: end;
 }

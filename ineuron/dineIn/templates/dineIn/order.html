@@ -7,6 +7,7 @@
     <title>Order | Bubble Bop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     {% load static %}
+    {% load filters %} 
     <link rel="stylesheet" href="{% static 'dineIn/order.css' %}">
 </head>
 <body>
@@ -25,7 +26,7 @@
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li ><button class="dropdown-item center" type="button">{{user.name}}</button></li>
                     <li><button class="dropdown-item center" type="button">Table No. {{user.tableNo}}</button></li>
-                    <li><button class="dropdown-item center" type="button"><a href="{% url 'delete' user.tableNo %}"  class="bordernone center signout"/>Sign Out</button></li>
+                    <li><button class="dropdown-item center" type="button"><a href="{% url 'delete' user.tableNo %}"  class="bordernone center signout">Sign Out</a></button></li>
                 </ul>
             </div>
             </section>
@@ -36,25 +37,25 @@
         </section>
         <div class="items">
                 <ul>
-                    <li class="starters center"><a href="{% url 'food_menu' user.tableNo %}#starters">
+                    <li class="starters center"><a href="{% url 'food_menu' id=user.tableNo otp=user.otp user_id=user|private:'_id' %}#starters">
                         STARTERS
                     </a></li>
-                    <li class="maincourse center"><a href="{% url 'food_menu' user.tableNo %}#main_course">
+                    <li class="maincourse center"><a href="{% url 'food_menu' id=user.tableNo otp=user.otp user_id=user|private:'_id' %}#main_course">
                         MAIN COURSE
                     </a></li>
-                    <li class="desserts center"><a href="{% url 'food_menu' user.tableNo %}#deserts">
+                    <li class="desserts center"><a href="{% url 'food_menu' id=user.tableNo otp=user.otp user_id=user|private:'_id' %}#deserts">
                         DESSERTS
                     </a></li>
-                    <li class="combo center"><a href="{% url 'food_menu' user.tableNo %}#combo">
+                    <li class="combo center"><a href="{% url 'food_menu' id=user.tableNo otp=user.otp user_id=user|private:'_id' %}#combo">
                         COMBO
                     </a></li>
-                    <li class="pizzas center"><a href="{% url 'food_menu' user.tableNo %}#pizza">
+                    <li class="pizzas center"><a href="{% url 'food_menu' id=user.tableNo otp=user.otp user_id=user|private:'_id' %}#pizza">
                         PIZZAS 
                     </a></li>
-                    <li class="burgers center"><a href="{% url 'food_menu' user.tableNo %}#burger">
+                    <li class="burgers center"><a href="{% url 'food_menu' id=user.tableNo otp=user.otp user_id=user|private:'_id' %}#burger">
                         BURGERS
                     </a></li>
-                    <li class="drinks center"><a href="{% url 'food_menu' user.tableNo %}#drinks">
+                    <li class="drinks center"><a href="{% url 'food_menu' id=user.tableNo otp=user.otp user_id=user|private:'_id' %}#drinks">
                         DRINKS
                     </a></li>
                 </ul>

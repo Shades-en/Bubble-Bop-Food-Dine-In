@@ -17,6 +17,17 @@
   }
 
 
+
+  a.signout{
+    color: #000000;
+    text-decoration: none;
+}
+
+  a.signout:hover{
+      color: #000000;
+  }
+
+
   body {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: #fef8f8;
@@ -30,7 +41,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 4rem 5vw;
+    margin: 4rem 15vw;
     padding: 0;
     list-style-type: none;
   }

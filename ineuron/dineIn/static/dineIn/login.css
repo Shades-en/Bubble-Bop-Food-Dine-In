@@ -6,9 +6,9 @@
   }
   
   body {
+    width: 100%;
     background:url("images/vintage-old-rustic-cutlery-dark.jpg");
     background-size: cover;
-    /* background: black; */
     font-family: 'Rubik', sans-serif;
     height:100vh;
     background-position: 50%;
