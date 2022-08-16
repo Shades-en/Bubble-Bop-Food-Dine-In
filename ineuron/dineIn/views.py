@@ -10,7 +10,7 @@ from email.message import EmailMessage
 port = 587  # For starttls
 smtp_server = "smtp.gmail.com"
 sender_email = "ayaan.ali.63621@gmail.com"
-password = "brrhqkjnzdechdns"
+password = "liyixmyuqlcwejev"
 
 def index(request, id):
     if(request.method == 'POST'):
@@ -70,6 +70,8 @@ def food_menu(request, id, otp, user_id):
             food_quantity.pop('final_amt')
             final_bill={}
             items={}
+            virt_id = utils.generate_virt_id(utils.bill_collection)
+            final_bill["id"] = virt_id
             for item_id in food_quantity:
                 food_item = utils.get_food(item_id)
                 food_name=food_item["name"]
@@ -78,9 +80,11 @@ def food_menu(request, id, otp, user_id):
             final_bill["tax"]=tax
             final_bill["final_amt"]=final_amt
             final_bill["items"]=items
-            final_bill["user"]=user
+            temp=utils.get_user(id)
+            temp.pop("_id")
+            final_bill["user"]=temp
             utils.save_bill(final_bill)
-            print(final_bill)
+            
         else:
             orders=[]
             for food_id in food_quantity:
@@ -89,7 +93,6 @@ def food_menu(request, id, otp, user_id):
                         food_item = utils.get_food(food_id)
                         orders.append([food_item, food_quantity[food_id]])
             bill=utils.generate_bill(orders)
-            print(bill)
             return render(request, 'dineIn/checkout.html', {'orders':orders, 'table_id':id, 'user':user, "bill":bill})
     return render(request, 'dineIn/food_menu.html', {'menu':menu, 'table_id':id, 'user':user})
 

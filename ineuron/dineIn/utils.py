@@ -1,24 +1,23 @@
-from functools import total_ordering
 from pymongo import MongoClient
 from django.utils import timezone
 from bson.objectid import ObjectId
 
-client = MongoClient('mongodb+srv://IS081:msr123@cluster0.dl94m.mongodb.net/test', maxPoolSize=50, wTimeoutMS=2500)
+client = MongoClient('mongodb+srv://IS081:msr123@cluster0.dl94m.mongodb.net/test',maxPoolSize=50, wTimeoutMS=2500)
 db = client['DineinDB']
-food_collection=db['FoodMenu']
-user_collection=db['Users']
-table_collection=db['Table']
-bill_collection=db['Bills']
-
-# def insertFoodOps():
-#     insert_result = food_collection.insert_one({"name": "Barbequeue Chicken", "type": "non-veg", "category": "Main Course", "price": 150, "description": "Chicken marinated in a spicy blend of spices, served with a side of salad and rice.", "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"})
+food_collection=db['dineIn_foodmenu']
+user_collection=db['dineIn_user']
+table_collection=db['dineIn_table']
+bill_collection=db['dineIn_bill']
 
 def insertUser(name, email, table_id, otp):
     try:
         table = table_collection.find_one({"number":table_id})
-        print(table)
         if table["status"]=="available":
-            insert_result = user_collection.insert_one({"name": name, "email":email, "tableNo":table_id, "otp":otp, "otp_verified":False})
+            print("begin")
+            virt_id=generate_virt_id(user_collection)
+            print(virt_id)
+            insert_result = user_collection.insert_one({"id" : virt_id, "name": name, "email":email, "tableNo":table_id, "otp":otp, "otp_verified":False})
+            print("hello")
             return insert_result
         else:
             return False
@@ -26,8 +25,15 @@ def insertUser(name, email, table_id, otp):
         print(e)
 
 def insertTable(table_no):
-    insert_result = table_collection.insert_one({"number": table_no, "status": "occupied", "capacity": "5"})
-    return insert_result
+    try:
+        print("begin")
+        virt_id=generate_virt_id(table_collection)
+        print(virt_id)
+        insert_result = table_collection.insert_one({"id": virt_id ,"number": table_no, "status": "occupied", "capacity": "5"})
+        print("hello")
+        return insert_result
+    except Exception as e:
+        return e
 
 def verify_otp(otp):
     try:
@@ -36,7 +42,6 @@ def verify_otp(otp):
         if user is not None:
             try:
                 update_result = user_collection.update_one({"otp":int(otp)}, {"$set":{"otp_verified":True}}, upsert=True)
-                # print(update_result.raw_result)
             except:
                 print("Error in updating otp_verified")
             
@@ -123,3 +128,10 @@ def save_bill(bill):
     except Exception as e:
         return e
 
+def generate_virt_id(collection):
+    id=1
+    while True:
+        doc=collection.find_one({"id":id})
+        if doc is None:
+            return id
+        id+=1
