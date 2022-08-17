@@ -1,8 +1,6 @@
 from djongo import models
 from django.contrib.postgres.fields import ArrayField
 from jsonfield import JSONField
-from bson.objectid import ObjectId
-
 
 class FoodMenu(models.Model):
     name = models.CharField(max_length=200)
@@ -16,7 +14,7 @@ class Table(models.Model):
     number = models.IntegerField(default=1, primary_key=True)
     status = models.CharField(max_length=50)
     capacity = models.IntegerField(default=5)
-   
+    occupied_by = JSONField(null=True, blank=True)
 
 class User(models.Model):
     name = models.CharField(max_length=200)
@@ -29,8 +27,8 @@ class Bill(models.Model):
     total = models.IntegerField(default=0)
     tax = models.FloatField(default=0)
     final_amt = models.FloatField(default=0)
-    items = JSONField()
-    user = JSONField()
+    items = JSONField(null=True, blank=True)
+    user = JSONField(null=True, blank=True)
     status = models.CharField(max_length=50, default="unpaid")
     time = models.DateTimeField(auto_now_add=True)
 

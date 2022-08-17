@@ -16,12 +16,10 @@
     border-radius: 50%;
   }
 
-
-
   a.signout{
     color: #000000;
     text-decoration: none;
-}
+  }
 
   a.signout:hover{
       color: #000000;
@@ -36,6 +34,10 @@
     
   }
 
+  .select{
+    padding: 1em;
+    font-weight: 500;
+  }
   
   .cards {
     display: grid;

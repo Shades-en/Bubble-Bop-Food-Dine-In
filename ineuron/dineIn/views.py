@@ -1,6 +1,3 @@
-from distutils.log import error
-from multiprocessing import context
-from sre_constants import SUCCESS
 from django.shortcuts import render, redirect
 from . import utils
 import random
@@ -24,9 +21,9 @@ def index(request, id):
             print(otp)
             success = utils.insertUser(name, email, table_id, otp)
             if success is False:
-                print(success)
                 return render(request, 'dineIn/index.html', {'login':otp, 'error':'Table Occupied'})
             context = ssl.create_default_context()
+            print("Certificate created")
             with smtplib.SMTP(smtp_server, port) as server:
                 server.starttls(context=context)
                 server.login(sender_email, password)
@@ -40,9 +37,11 @@ def index(request, id):
                 msg['From'] = sender_email
                 msg['To'] = email
                 server.send_message(msg)
+            print("email sent")
             return render(request, 'dineIn/index.html', {'otp':otp})
         elif (not name) or (not email):
             verification=utils.verify_otp(user_otp)
+            print(verification)
             if verification[0]:
                 delete_result = utils.delete_unverified(verification[1].get("email"))
                 return render(request ,'dineIn/order.html', {'user':verification[1]})
@@ -83,8 +82,7 @@ def food_menu(request, id, otp, user_id):
             temp=utils.get_user(id)
             temp.pop("_id")
             final_bill["user"]=temp
-            utils.save_bill(final_bill)
-            
+            utils.save_bill(final_bill)     
         else:
             orders=[]
             for food_id in food_quantity:

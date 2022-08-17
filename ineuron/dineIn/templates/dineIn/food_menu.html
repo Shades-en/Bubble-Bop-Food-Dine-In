@@ -9,14 +9,11 @@
     {% load filters %} 
     <link rel="stylesheet" href="{% static 'dineIn/food_menu.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  </head>
+</head>
 <body>
   <div>
-
-    
     <section class="section1 center" id="section1">
-      <div class="logomain">
-          
+      <div class="logomain">  
           <img src="{% static 'dineIn/images/BUBBLE BOP.png' %}" alt="logo">
       </div>
       <h1>Bubble Bop</h1>
@@ -36,149 +33,151 @@
     </section>
 
     <!-- line break---------------------- -->
-
+    <div class="select">
+      <input id="veg" type="checkbox" onchange="type_display()">
+      <label for="veg">Veg</label>
+      &nbsp;&nbsp;
+      <input id="nonveg" type="checkbox" onchange="type_display()">
+      <label for="nonveg">Non-Veg</label>
+    </div>
+  
     <form id="cart-submit" method="POST">
       {% csrf_token %}
       <section class="foodsec" id="starters">
           <div>
-              <H2>STARTERS</H2>
+            <H2>STARTERS</H2>
           </div>
           <ul class="cards">
-              {% for item in menu.starters %}
-              <section>
-              <li>
-                <a href="" class="card">
-                  <img src="{{item.image}}" class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
-                      {% if item.type == "veg" %}
-                          <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
-                      {% else %}
-                          <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
-                      {% endif %}
-                      <div class="card__header-text">
-                        <h3 class="card__title">{{item.name}}</h3>            
-                        <span class="card__status">₹{{item.price}}</span>
+            {% for item in menu.starters %}
+              <section class = {{item.type}}>
+                <li>
+                  <a href="" class="card">
+                    <img src="{{item.image}}" class="card__image" alt="starter-image"/>
+                    <div class="card__overlay">
+                      <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                        {% if item.type == "veg" %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="veg icon" />
+                        {% else %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="nonveg icon" />
+                        {% endif %}
+                        <div class="card__header-text">
+                          <h3 class="card__title">{{item.name}}</h3>            
+                          <span class="card__status">₹{{item.price}}</span>
+                        </div>
                       </div>
-                      
+                      <p class="card__description">{{item.description}}</p>
                     </div>
-                    <p class="card__description">{{item.description}}</p>
-                  </div>
-                </a>      
-              </li>
-              <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> 
-                 <span class="pe-3"> <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
-              </div>
+                  </a>      
+                </li>
+                <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> 
+                  <span class="pe-3"> <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
+                </div>
               </section>
-              {% endfor %}
+            {% endfor %}
           </ul>
       </section>
 
       <section class="foodsec" id="main_course">
         <div>
-            <H2>Main Course</H2>
+          <H2>Main Course</H2>
         </div>
         <ul class="cards">
             {% for item in menu.main_course %}
-            <section>
-            <li>
-              <a href="" class="card">
-                <img src="{{item.image}}" class="card__image" alt="" />
-                <div class="card__overlay">
-                  <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
-                    {% if item.type == "veg" %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
-                    {% else %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
-                    {% endif %}
-                    <div class="card__header-text">
-                      <h3 class="card__title">{{item.name}}</h3>            
-                      <span class="card__status">₹{{item.price}}</span>
+            <section class = {{item.type}}>
+              <li>
+                <a href="" class="card">
+                  <img src="{{item.image}}" class="card__image" alt="main_course-image" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                      {% if item.type == "veg" %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="veg icon" />
+                      {% else %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="nonveg icon" />
+                      {% endif %}
+                      <div class="card__header-text">
+                        <h3 class="card__title">{{item.name}}</h3>            
+                        <span class="card__status">₹{{item.price}}</span>
+                      </div>
                     </div>
+                    <p class="card__description">{{item.description}}</p>
                   </div>
-                  <p class="card__description">{{item.description}}</p>
-                </div>
-              </a>      
-             </li>
-             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;">  <span class="pe-3"> 
-              <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
-            </div>
+                </a>      
+              </li>
+              <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;">  <span class="pe-3"> 
+                <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
+              </div>
             </section>
             {% endfor %}
         </ul>
       </section>
-
 
       <section class="foodsec" id="deserts">
         <div>
-            <H2>Desserts</H2>
+          <H2>Desserts</H2>
         </div>
         <ul class="cards">
             {% for item in menu.deserts %}
-            <section>
-            <li>
-              <a href="" class="card">
-                <img src="{{item.image}}" class="card__image" alt="" />
-                <div class="card__overlay">
-                  <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
-                    {% if item.type == "veg" %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
-                    {% else %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
-                    {% endif %}
-                    <div class="card__header-text">
-                      <h3 class="card__title">{{item.name}}</h3>            
-                      <span class="card__status">₹{{item.price}}</span>
+            <section class = {{item.type}}>
+              <li>
+                <a href="" class="card">
+                  <img src="{{item.image}}" class="card__image" alt="Desserts-image" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                      {% if item.type == "veg" %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="veg icon" />
+                      {% else %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="nonveg icon" />
+                      {% endif %}
+                      <div class="card__header-text">
+                        <h3 class="card__title">{{item.name}}</h3>            
+                        <span class="card__status">₹{{item.price}}</span>
+                      </div>
                     </div>
-                    
+                    <p class="card__description">{{item.description}}</p>
                   </div>
-                  <p class="card__description">{{item.description}}</p>
-                </div>
-              </a>      
-             </li>
-             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <<span class="pe-3"> 
-              <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
-            </div>
+                </a>      
+              </li>
+              <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <span class="pe-3"> 
+                <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
+              </div>
             </section>
             {% endfor %}
         </ul>
       </section>
 
-
       <section class="foodsec" id="drinks">
         <div>
-            <H2>Drinks</H2>
+          <H2>Drinks</H2>
         </div>
         <ul class="cards">
             {% for item in menu.drinks %}
-            <section>
-            <li>
-              <a href="" class="card">
-                <img src="{{item.image}}" class="card__image" alt="" />
-                <div class="card__overlay">
-                  <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
-                    {% if item.type == "veg" %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
-                    {% else %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
-                    {% endif %}
-                    <div class="card__header-text">
-                      <h3 class="card__title">{{item.name}}</h3>            
-                      <span class="card__status">₹{{item.price}}</span>
+            <section class = {{item.type}}>
+              <li>
+                <a href="" class="card">
+                  <img src="{{item.image}}" class="card__image" alt="drinks-image" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                      {% if item.type == "veg" %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="veg icon" />
+                      {% else %}
+                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="nonveg icon" />
+                      {% endif %}
+                      <div class="card__header-text">
+                        <h3 class="card__title">{{item.name}}</h3>            
+                        <span class="card__status">₹{{item.price}}</span>
+                      </div>
                     </div>
-                    
+                    <p class="card__description">{{item.description}}</p>
                   </div>
-                  <p class="card__description">{{item.description}}</p>
-                </div>
-              </a>      
-             </li>
-             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;">  <span class="pe-3">
-               <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
-            </div>
+                </a>      
+              </li>
+              <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;">  <span class="pe-3">
+                <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
+              </div>
             </section>
             {% endfor %}
         </ul>
@@ -186,35 +185,34 @@
 
       <section class="foodsec" id="combo">
         <div>
-            <H2>Combos</H2>
+          <H2>Combos</H2>
         </div>
         <ul class="cards">
             {% for item in menu.combo %}
-            <section>
-            <li>
-              <a href="" class="card">
-                <img src="{{item.image}}" class="card__image" alt="" />
-                <div class="card__overlay">
-                  <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
-                    {% if item.type == "veg" %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
-                    {% else %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
-                    {% endif %}
-                    <div class="card__header-text">
-                      <h3 class="card__title">{{item.name}}</h3>            
-                      <span class="card__status">₹{{item.price}}</span>
+            <section class = {{item.type}}>
+              <li>
+                <a href="" class="card">
+                  <img src="{{item.image}}" class="card__image" alt="combo-image"/>
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                      {% if item.type == "veg" %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="veg icon" />
+                      {% else %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="veg icon" />
+                      {% endif %}
+                      <div class="card__header-text">
+                        <h3 class="card__title">{{item.name}}</h3>            
+                        <span class="card__status">₹{{item.price}}</span>
+                      </div>
                     </div>
-                    
+                    <p class="card__description">{{item.description}}</p>
                   </div>
-                  <p class="card__description">{{item.description}}</p>
-                </div>
-              </a>      
-             </li>
-             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <span class="pe-3"> 
-              <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
-            </div>
+                </a>      
+              </li>
+              <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <span class="pe-3"> 
+                <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
+              </div>
             </section>
             {% endfor %}
         </ul>
@@ -227,31 +225,31 @@
         </div>
         <ul class="cards">
             {% for item in menu.pizza %}
-            <section>
-            <li>
-              <a href="" class="card">
-                <img src="{{item.image}}" class="card__image" alt="" />
-                <div class="card__overlay">
-                  <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
-                    {% if item.type == "veg" %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
-                    {% else %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
-                    {% endif %}
-                    <div class="card__header-text">
-                      <h3 class="card__title">{{item.name}}</h3>            
-                      <span class="card__status">₹{{item.price}}</span>
+            <section class = {{item.type}}>
+              <li>
+                <a href="" class="card">
+                  <img src="{{item.image}}" class="card__image" alt="pizza-image"/>
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                      {% if item.type == "veg" %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="veg icon" />
+                      {% else %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="nonveg icon" />
+                      {% endif %}
+                      <div class="card__header-text">
+                        <h3 class="card__title">{{item.name}}</h3>            
+                        <span class="card__status">₹{{item.price}}</span>
+                      </div>
+                      
                     </div>
-                    
+                    <p class="card__description">{{item.description}}</p>
                   </div>
-                  <p class="card__description">{{item.description}}</p>
-                </div>
-              </a>      
-             </li>
-             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <span class="pe-3"> 
-              <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
-            </div>
+                </a>      
+              </li>
+              <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"> <span class="pe-3"> 
+                <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
+              </div>
             </section>
             {% endfor %}
         </ul>
@@ -263,31 +261,31 @@
         </div>
         <ul class="cards">
             {% for item in menu.burger %}
-            <section>
-            <li>
-              <a href="" class="card">
-                <img src="{{item.image}}" class="card__image" alt="" />
-                <div class="card__overlay">
-                  <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
-                    {% if item.type == "veg" %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="" />
-                    {% else %}
-                        <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="" />
-                    {% endif %}
-                    <div class="card__header-text">
-                      <h3 class="card__title">{{item.name}}</h3>            
-                      <span class="card__status">₹{{item.price}}</span>
+            <section class = {{item.type}}>
+              <li>
+                <a href="" class="card">
+                  <img src="{{item.image}}" class="card__image" alt="burger-image"/>
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>   
+                      {% if item.type == "veg" %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/veg.png' %}" alt="veg icon"/>
+                      {% else %}
+                          <img class="card__thumb" src="{% static 'dineIn/images/nonveg.png' %}" alt="nonveg icon"/>
+                      {% endif %}
+                      <div class="card__header-text">
+                        <h3 class="card__title">{{item.name}}</h3>            
+                        <span class="card__status">₹{{item.price}}</span>
+                      </div>
+                      
                     </div>
-                    
+                    <p class="card__description">{{item.description}}</p>
                   </div>
-                  <p class="card__description">{{item.description}}</p>
-                </div>
-              </a>      
-             </li>
-             <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"><span class="pe-3">
-               <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
-            </div>
+                </a>      
+              </li>
+              <div class="d-flex align-items-center quantity mw" style="background-color:#e3d5ca;"><span class="pe-3">
+                <input name = {{ item|private:"_id" }}  class="ps-2 quantityBox" type="number"  min="0" ></span>
+              </div>
             </section>
             {% endfor %}
         </ul>
@@ -326,21 +324,64 @@
         </a>
       </div>
     </div>
-       
-            <div class="cart">
-                
-                 <a href="#" onclick="myFunction()">
-                    <img src="{% static 'dineIn/images/cart.png' %}" alt="cart">
-                 </a>
-                </form>
-            </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-            <script>
-                function myFunction() {
-                    document.getElementById("cart-submit").submit();
-                }
-            </script>
-
+    <div class="cart">  
+          <a href="#" onclick="myFunction()">
+            <img src="{% static 'dineIn/images/cart.png' %}" alt="cart">
+          </a>
+        </form>
+    </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>       
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script>
+    function type_display(){
+      if(document.getElementById("veg").checked){
+        console.log("veg");
+        if(!document.getElementById("nonveg").checked){
+          for(var i=0;i<document.getElementsByClassName("nveg").length;i++){
+            document.getElementsByClassName("nveg")[i].style.display = "none";
+          }
+        }
+        else {
+          for(var i=0;i<document.getElementsByClassName("veg").length;i++){
+          document.getElementsByClassName("veg")[i].style.display = "block";
+          }
+          for(var i=0;i<document.getElementsByClassName("nveg").length;i++){
+            document.getElementsByClassName("nveg")[i].style.display = "block";
+          }
+        }
+      }
+      else if(document.getElementById("nonveg").checked){
+        console.log("nonveg");
+        if(!document.getElementById("veg").checked){
+          for(var i=0;i<document.getElementsByClassName("veg").length;i++){
+            document.getElementsByClassName("veg")[i].style.display = "none";
+          }
+        }
+        else {
+          for(var i=0;i<document.getElementsByClassName("veg").length;i++){
+          document.getElementsByClassName("veg")[i].style.display = "block";
+          }
+          for(var i=0;i<document.getElementsByClassName("nveg").length;i++){
+            document.getElementsByClassName("nveg")[i].style.display = "block";
+          }
+        }
+      }
+      else{
+        for(var i=0;i<document.getElementsByClassName("veg").length;i++){
+          document.getElementsByClassName("veg")[i].style.display = "block";
+        }
+        for(var i=0;i<document.getElementsByClassName("nveg").length;i++){
+          document.getElementsByClassName("nveg")[i].style.display = "block";
+        }
+      }
+    }
+
+    function myFunction() {
+      document.getElementById("cart-submit").submit();
+    }
+  </script>
 </body>
 </html>

@@ -11,43 +11,36 @@ bill_collection=db['dineIn_bill']
 
 def insertUser(name, email, table_id, otp):
     try:
+        print(name, email, table_id, otp)
         table = table_collection.find_one({"number":table_id})
         if table["status"]=="available":
-            print("begin")
+            print("Table is available")
             virt_id=generate_virt_id(user_collection)
-            print(virt_id)
+            print(virt_id, "virt_id") 
             insert_result = user_collection.insert_one({"id" : virt_id, "name": name, "email":email, "tableNo":table_id, "otp":otp, "otp_verified":False})
-            print("hello")
             return insert_result
-        else:
+        else: 
             return False
     except Exception as e:
         print(e)
-
-def insertTable(table_no):
-    try:
-        print("begin")
-        virt_id=generate_virt_id(table_collection)
-        print(virt_id)
-        insert_result = table_collection.insert_one({"id": virt_id ,"number": table_no, "status": "occupied", "capacity": "5"})
-        print("hello")
-        return insert_result
-    except Exception as e:
         return e
 
 def verify_otp(otp):
     try:
-        user = user_collection.find_one({"otp":int(otp)})
-        print(user)
+        user = user_collection.find_one({"otp":int(otp)})   
         if user is not None:
             try:
                 update_result = user_collection.update_one({"otp":int(otp)}, {"$set":{"otp_verified":True}}, upsert=True)
+                print(update_result)
             except:
                 print("Error in updating otp_verified")
             
             table_no=user.get("tableNo")
             try:
-                update_result=table_collection.update_one({"number":table_no}, {"$set":{"status":"occupied"}})
+                temp = user_collection.find_one({"otp":int(otp), "otp_verified":True})
+                temp.pop("_id")
+                print(temp, "temp")
+                update_result=table_collection.update_one({"number":table_no}, {"$set":{"status":"occupied", "occupied_by": temp}})
             except Exception as e:
                 return e
             return [True, user]
@@ -67,7 +60,7 @@ def delete_unverified(email):
 
 def delete_user_table(table_no, user):
     try:
-        update_result=table_collection.update_one({"number":table_no}, {"$set":{"status":"available"}})
+        update_result=table_collection.update_one({"number":table_no}, {"$set":{"status":"available", "occupied_by":None}})
         delete_user_result = user_collection.delete_many({"tableNo":table_no, "email":user["email"]})
         return [update_result, delete_user_result]
     except Exception as e:
@@ -133,5 +126,6 @@ def generate_virt_id(collection):
     while True:
         doc=collection.find_one({"id":id})
         if doc is None:
+            print("id found")
             return id
         id+=1
