@@ -2,12 +2,12 @@ from pymongo import MongoClient
 from django.utils import timezone
 from bson.objectid import ObjectId
 
-client = MongoClient('mongodb+srv://IS081:msr123@cluster0.dl94m.mongodb.net/test',maxPoolSize=50, wTimeoutMS=2500) #atlas connection
-db = client['DineinDB']
-food_collection=db['dineIn_foodmenu']
-user_collection=db['dineIn_user']
-table_collection=db['dineIn_table']
-bill_collection=db['dineIn_bill']
+client = MongoClient('CONNECTION_LINK',maxPoolSize=50, wTimeoutMS=2500) #atlas connection
+db = client['YOUR_DATABASE_NAME']
+food_collection=db['DATABASENAME_foodmenu']
+user_collection=db['DATABASENAME_user']
+table_collection=db['DATABASENAME_table']
+bill_collection=db['DATABASENAME_bill']
 
 def insertUser(name, email, table_id, otp):
     try:
