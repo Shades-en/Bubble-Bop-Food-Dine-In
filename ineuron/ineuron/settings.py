@@ -76,10 +76,9 @@ WSGI_APPLICATION = 'ineuron.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'djongo',
-            'NAME': 'DineinDB',
-            # 'ENFORCE_SCHEMA': False,
+            'NAME': 'YOUR_DATABASE_NAME',
             'CLIENT': {
-                'host': 'mongodb+srv://IS081:msr123@cluster0.dl94m.mongodb.net/?retryWrites=true&w=majority'
+                'host': 'CONNECTION_LINK' #YOUR_MONGODB_CONNECTION_LINK
             }  
         }
 }
