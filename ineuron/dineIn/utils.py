@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from django.utils import timezone
 from bson.objectid import ObjectId
 
-client = MongoClient('mongodb+srv://IS081:msr123@cluster0.dl94m.mongodb.net/test',maxPoolSize=50, wTimeoutMS=2500)
+client = MongoClient('mongodb+srv://IS081:msr123@cluster0.dl94m.mongodb.net/test',maxPoolSize=50, wTimeoutMS=2500) #atlas connection
 db = client['DineinDB']
 food_collection=db['dineIn_foodmenu']
 user_collection=db['dineIn_user']
