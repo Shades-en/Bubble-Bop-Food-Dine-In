@@ -6,8 +6,8 @@ from email.message import EmailMessage
 
 port = 587  # For starttls
 smtp_server = "smtp.gmail.com"
-sender_email = "ayaan.ali.63621@gmail.com" # Enter the sender email address
-password = "liyixmyuqlcwejev" #app password
+sender_email = "YOUR_SENDER_EMAIL" # Enter the sender email address
+password = "APP_PASSWORD" #app password
 
 def index(request, id):
     if(request.method == 'POST'):
