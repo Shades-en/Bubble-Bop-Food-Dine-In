@@ -53,7 +53,7 @@ py manage.py migrate
 py manage.py runserver
 ```
 
-## Contributors
+## Contributors For Frontend
 * [Adeeb K.M](https://github.com/adeebkm)
 * [Aman Clement](https://github.com/Aman-Clement)
 * [Lava Kumar Gowda M A](https://github.com/nameisluv)
