@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "62fa99c7ce94d658cdfd0ef2"
+  },
+  "id": 1,
+  "number": 5,
+  "status": "available",
+  "capacity": 5,
+  "occupied_by": null
+},{
+  "_id": {
+    "$oid": "62fa9a0029a6ecd5f18ae882"
+  },
+  "id": 2,
+  "number": 1,
+  "status": "available",
+  "capacity": 5,
+  "occupied_by": null
+},{
+  "_id": {
+    "$oid": "62fa9a7129a6ecd5f18ae883"
+  },
+  "id": 3,
+  "number": 2,
+  "status": "available",
+  "capacity": 5,
+  "occupied_by": null
+},{
+  "_id": {
+    "$oid": "62fa9aa829a6ecd5f18ae884"
+  },
+  "id": 4,
+  "number": 3,
+  "status": "available",
+  "capacity": 5,
+  "occupied_by": null
+},{
+  "_id": {
+    "$oid": "62fa9b0c29a6ecd5f18ae886"
+  },
+  "id": 6,
+  "number": 6,
+  "status": "available",
+  "capacity": 5,
+  "occupied_by": null
+},{
+  "_id": {
+    "$oid": "62fa9b3a29a6ecd5f18ae887"
+  },
+  "id": 7,
+  "number": 7,
+  "status": "available",
+  "capacity": 7,
+  "occupied_by": null
+},{
+  "_id": {
+    "$oid": "62fa9b7129a6ecd5f18ae888"
+  },
+  "id": 8,
+  "number": 8,
+  "status": "available",
+  "capacity": 5,
+  "occupied_by": null
+},{
+  "_id": {
+    "$oid": "62fd24b29c5f6793f0e09ed8"
+  },
+  "id": 5,
+  "number": 4,
+  "status": "available",
+  "capacity": 5,
+  "occupied_by": null
+}]

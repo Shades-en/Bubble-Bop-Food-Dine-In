@@ -1,0 +1,452 @@
+[{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b0e"
+  },
+  "id": 1,
+  "name": "Smoked Chilly Paneer",
+  "type": "veg",
+  "category": "starters",
+  "description": "Smoked Chilly Paneer with a side of Chilly Paneer",
+  "image": "https://b.zmtcdn.com/data/dish_photos/f73/63ae1c6e8b2cfff4b2859d061bc41f73.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 150
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b0f"
+  },
+  "id": 2,
+  "name": "Smoked Golden Baby Corn",
+  "type": "veg",
+  "category": "starters",
+  "description": "Smoked Golden Baby Corn with a side of Golden Baby Corn",
+  "image": "https://b.zmtcdn.com/data/dish_photos/032/78590d630d1ef2b27f01be6e5b865032.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 150
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b10"
+  },
+  "id": 3,
+  "name": "Smoked Chicken Leg Roast",
+  "type": "nveg",
+  "category": "starters",
+  "description": "Smoked Chicken Leg Roast with a side of Chicken Leg Roast",
+  "image": "https://b.zmtcdn.com/data/dish_photos/36b/c63736304e7ec6a4551498bb473b736b.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 135
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b11"
+  },
+  "id": 4,
+  "name": "Smoked Lemon Chicken",
+  "type": "nveg",
+  "category": "starters",
+  "description": "Smoked Lemon Chicken with a side of Lemon Chicken",
+  "image": "https://b.zmtcdn.com/data/dish_photos/fe7/5ee5ce65c300c9756435565326aadfe7.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 140
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b12"
+  },
+  "id": 5,
+  "name": "Smoked Chicken Rayalaseema",
+  "type": "nveg",
+  "category": "starters",
+  "description": "Smoked Chicken Rayalaseema with a side of Chicken Rayalaseema",
+  "image": "https://b.zmtcdn.com/data/dish_photos/551/e632037a8701e8ef569d3a3130ccb551.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 100
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b13"
+  },
+  "id": 6,
+  "name": "Smoked Mutton Kheema Fry",
+  "type": "nveg",
+  "category": "starters",
+  "description": "Smoked Mutton Kheema Fry with a side of Mutton Kheema Fry",
+  "image": "https://b.zmtcdn.com/data/dish_photos/6c0/b389e32d3f4e2f699c89483f487216c0.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 135
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b14"
+  },
+  "id": 7,
+  "name": "Master Chef Pasta",
+  "type": "veg",
+  "category": "main_course",
+  "description": "Master Chef Pasta with a side of Pasta",
+  "image": "https://b.zmtcdn.com/data/dish_photos/0b8/b00b6f56147e6d3b80556d0e0862b0b8.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 240
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b15"
+  },
+  "id": 8,
+  "name": "Spinach and Ricotta Ravioli",
+  "type": "nveg",
+  "category": "main_course",
+  "description": "Spinach and Ricotta Ravioli with a side of Spinach and Ricotta Ravioli",
+  "image": "https://b.zmtcdn.com/data/dish_photos/7a4/fb0ffe6c81a6116ff992096517d4c7a4.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 190
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b16"
+  },
+  "id": 9,
+  "name": "Chilli Crusted Cobbler and Turmeric Risotto",
+  "type": "nveg",
+  "category": "main_course",
+  "description": "Chilli Crusted Cobbler and Turmeric Risotto with a side of Chilli Crusted Cobbler and Turmeric Risotto",
+  "image": "https://b.zmtcdn.com/data/dish_photos/2cd/8612a8ad721b1d8d977c8c1c1426e2cd.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 250
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b17"
+  },
+  "id": 10,
+  "name": "Chermoula Spiced Grilled Chicken",
+  "type": "nveg",
+  "category": "main_course",
+  "description": "Chermoula Spiced Grilled Chicken with a side of Chermoula Spiced Grilled Chicken",
+  "image": "https://b.zmtcdn.com/data/dish_photos/9ff/095cc92029697402334232ade6daa9ff.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 200
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b18"
+  },
+  "id": 11,
+  "name": "Peri Peri Rubbed Grilled Chicken",
+  "type": "nveg",
+  "category": "main_course",
+  "description": "Peri Peri Rubbed Grilled Chicken with a side of Peri Peri Rubbed Grilled Chicken",
+  "image": "https://b.zmtcdn.com/data/dish_photos/63d/344fcf7493f428fbc4f872928b1b163d.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 180
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b19"
+  },
+  "id": 12,
+  "name": "Bacon Wrapped Chicken",
+  "type": "nveg",
+  "category": "main_course",
+  "description": "Bacon Wrapped Chicken with a side of Bacon Wrapped Chicken",
+  "image": "https://b.zmtcdn.com/data/dish_photos/182/9481be0ed38e621cd3e478c0cfc5f182.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 190
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b1a"
+  },
+  "id": 13,
+  "name": "Half A Roast Rosemary Chicken with Wild Mushroom AOP",
+  "type": "nveg",
+  "category": "main_course",
+  "description": "Half A Roast Rosemary Chicken with Wild Mushroom AOP with a side of Half A Roast Rosemary Chicken with Wild Mushroom AOP",
+  "image": "https://b.zmtcdn.com/data/dish_photos/f6e/3b7932f0f8ff864d73fc3c0adbd3af6e.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 200
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b1b"
+  },
+  "id": 14,
+  "name": "Moroccan Mint Lime Juice",
+  "type": "veg",
+  "category": "drinks",
+  "description": "Moroccan Mint Lime Juice with a side of Moroccan Mint Lime Juice",
+  "image": "https://b.zmtcdn.com/data/dish_photos/f04/e18cf1ddbb5d8c5d60f5054b84ba8f04.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 125
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b1c"
+  },
+  "id": 15,
+  "name": "Pineapple Juice",
+  "type": "veg",
+  "category": "drinks",
+  "description": "Pineapple Juice with a side of Pineapple Juice",
+  "image": "https://b.zmtcdn.com/data/dish_photos/99d/d52ac7c5d22285182e6c87eaf4c7699d.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 110
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b1d"
+  },
+  "id": 16,
+  "name": "Ginger Lime Juice",
+  "type": "veg",
+  "category": "drinks",
+  "description": "Ginger Lime Juice with a side of Ginger Lime Juice",
+  "image": "https://b.zmtcdn.com/data/dish_photos/a8c/381134cbd448adc2d1e15d7773e6ea8c.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 120
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b1e"
+  },
+  "id": 17,
+  "name": "Fresh Lime Soda",
+  "type": "veg",
+  "category": "drinks",
+  "description": "Fresh Lime Soda with a side of Fresh Lime Soda",
+  "image": "https://b.zmtcdn.com/data/dish_photos/f82/029fd9775a17456208b321dada033f82.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 100
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b1f"
+  },
+  "id": 18,
+  "name": "Fresh Lime Juice",
+  "type": "veg",
+  "category": "drinks",
+  "description": "Fresh Lime Juice with a side of Fresh Lime Juice",
+  "image": "https://b.zmtcdn.com/data/dish_photos/0ef/e6c8ae4d5d6414141f8b72827af4f0ef.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 110
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b20"
+  },
+  "id": 19,
+  "name": "Blue Lime Juice",
+  "type": "veg",
+  "category": "drinks",
+  "description": "Blue Lime Juice with a side of Blue Lime Juice",
+  "image": "https://b.zmtcdn.com/data/dish_photos/764/513fd383125255851457917483b91764.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 130
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b21"
+  },
+  "id": 20,
+  "name": "Falooda",
+  "type": "nveg",
+  "category": "deserts",
+  "description": "Falooda with a side of Falooda",
+  "image": "https://b.zmtcdn.com/data/dish_photos/e3f/3fcde98d9dadd0d3e137caa972069e3f.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 145
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b22"
+  },
+  "id": 21,
+  "name": "Royal Style Falooda",
+  "type": "nveg",
+  "category": "deserts",
+  "description": "Royal Style Falooda with a side of Royal Style Falooda",
+  "image": "https://b.zmtcdn.com/data/dish_photos/b4a/3df4844460d177f8eb0768f818f90b4a.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 222
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b23"
+  },
+  "id": 22,
+  "name": "Death By Chocolate Ice Cream",
+  "type": "nveg",
+  "category": "deserts",
+  "description": "Death By Chocolate Ice Cream with a side of Death By Chocolate Ice Cream",
+  "image": "https://b.zmtcdn.com/data/dish_photos/dea/023fec8c5cfb758b8713349e2a9dcdea.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 150
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b24"
+  },
+  "id": 23,
+  "name": "Fruit N Cream",
+  "type": "veg",
+  "category": "deserts",
+  "description": "Fruit N Cream with a side of Fruit N Cream",
+  "image": "https://b.zmtcdn.com/data/dish_photos/00b/d1f64ca1aa07330f78f0995c82c1c00b.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 140
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b25"
+  },
+  "id": 24,
+  "name": "Water Melon Sundae",
+  "type": "veg",
+  "category": "deserts",
+  "description": "Water Melon Sundae with a side of Water Melon Sundae",
+  "image": "https://b.zmtcdn.com/data/dish_photos/9c2/ac641d0963e72ffd980c0da8e5adb9c2.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 190
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b26"
+  },
+  "id": 25,
+  "name": "Royal All In One Ice Cream",
+  "type": "veg",
+  "category": "deserts",
+  "description": "Royal All In One Ice Cream with a side of Royal All In One Ice Cream",
+  "image": "https://b.zmtcdn.com/data/dish_photos/15b/af584d18c5707f5e5c562fab04fb915b.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 230
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b27"
+  },
+  "id": 26,
+  "name": "Veg Fried Rice & Gobi Manchurian",
+  "type": "veg",
+  "category": "combo",
+  "description": "Veg Fried Rice & Gobi Manchurian with a side of Veg Fried Rice & Gobi Manchurian",
+  "image": "https://b.zmtcdn.com/data/dish_photos/b95/bffa32a74a9c20e1a5831edc57cd5b95.png?fit=around|130:130&crop=130:130;*,*",
+  "price": 240
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b28"
+  },
+  "id": 27,
+  "name": "Ghee Rice With Dal Fry",
+  "type": "veg",
+  "category": "combo",
+  "description": "Ghee Rice With Dal Fry with a side of Ghee Rice With Dal Fry",
+  "image": "https://b.zmtcdn.com/data/dish_photos/5fc/dff6a95626a60b75c7de72055f0b15fc.png?fit=around|130:130&crop=130:130;*,*",
+  "price": 270
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b29"
+  },
+  "id": 28,
+  "name": "2 Coin Parotta, Hyderabadi Boneless Chicken Gravy & Popcorn Kebab",
+  "type": "nveg",
+  "category": "combo",
+  "description": "2 Coin Parotta, Hyderabadi Boneless Chicken Gravy & Popcorn Kebab with a side of 2 Coin Parotta, Hyderabadi Boneless Chicken Gravy & Popcorn Kebab",
+  "image": "https://b.zmtcdn.com/data/dish_photos/4a7/d6c48cf7132258a7cd6a1257bf1044a7.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 260
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b2a"
+  },
+  "id": 29,
+  "name": "Ghee Rice Butter Chicken Combo & Chicken Manchurian Dry",
+  "type": "nveg",
+  "category": "combo",
+  "description": "Ghee Rice Butter Chicken Combo & Chicken Manchurian Dry with a side of Ghee Rice Butter Chicken Combo & Chicken Manchurian Dry",
+  "image": "https://b.zmtcdn.com/data/dish_photos/3c1/7394ef6f5086c3b3c4b17130995d33c1.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 290
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b2b"
+  },
+  "id": 30,
+  "name": "2 Naan, Hyderabadi Boneless Chicken Gravy & Popcorn Kebab",
+  "type": "nveg",
+  "category": "combo",
+  "description": "2 Naan, Hyderabadi Boneless Chicken Gravy & Popcorn Kebab with a side of 2 Naan, Hyderabadi Boneless Chicken Gravy & Popcorn Kebab",
+  "image": "https://b.zmtcdn.com/data/dish_photos/131/b9a754d38a686710878f45ac89151131.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 340
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b2c"
+  },
+  "id": 31,
+  "name": "Creamy Tomato Pasta Pizza - Veg",
+  "type": "veg",
+  "category": "pizza",
+  "description": "Creamy Tomato Pasta Pizza - Veg with a side of Creamy Tomato Pasta Pizza - Veg",
+  "image": "https://b.zmtcdn.com/data/dish_photos/d6d/8e598eaf8cb3a0ec1a0dc974b1358d6d.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 200
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b2d"
+  },
+  "id": 32,
+  "name": "Moroccan Spice Pasta Pizza - Veg",
+  "type": "veg",
+  "category": "pizza",
+  "description": "Moroccan Spice Pasta Pizza - Veg with a side of Moroccan Spice Pasta Pizza - Veg",
+  "image": "https://b.zmtcdn.com/data/dish_photos/7bf/5c4d9929d3455665e9410609eea297bf.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 210
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b2e"
+  },
+  "id": 33,
+  "name": "The 5 Chicken Feast Pizza",
+  "type": "nveg",
+  "category": "pizza",
+  "description": "The 5 Chicken Feast Pizza with a side of The 5 Chicken Feast Pizza",
+  "image": "https://b.zmtcdn.com/data/dish_photos/4e2/f3b7422765e4b85e212099c3e4ded4e2.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 250
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b2f"
+  },
+  "id": 34,
+  "name": "Chicken Maximus",
+  "type": "nveg",
+  "category": "pizza",
+  "description": "Chicken Maximus with a side of Chicken Maximus",
+  "image": "https://b.zmtcdn.com/data/dish_photos/152/e90f19ee75c9b1c548ebba9a082be152.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 230
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b30"
+  },
+  "id": 35,
+  "name": "Indo Fusion Chicken Pizza",
+  "type": "nveg",
+  "category": "pizza",
+  "description": "Indo Fusion Chicken Pizza with a side of Indo Fusion Chicken Pizza",
+  "image": "https://b.zmtcdn.com/data/dish_photos/b4b/075e3ca67da88b2883c41b44facbab4b.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 210
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b31"
+  },
+  "id": 36,
+  "name": "Spiced Double Chicken",
+  "type": "nveg",
+  "category": "pizza",
+  "description": "Spiced Double Chicken with a side of Spiced Double Chicken",
+  "image": "https://b.zmtcdn.com/data/dish_photos/129/f59f38cb1800193ccf196f1f9646b129.jpg?output-format=webp&fit=around|130:130&crop=130:130;*,*",
+  "price": 200
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b32"
+  },
+  "id": 37,
+  "name": "Peri Peri Paneer Burger",
+  "type": "veg",
+  "category": "burger",
+  "description": "Peri Peri Paneer Burger with a side of Peri Peri Paneer Burger",
+  "image": "https://b.zmtcdn.com/data/dish_photos/32c/7dc2dd4f76f076e7dfd5d4c66b67132c.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 200
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b33"
+  },
+  "id": 38,
+  "name": "Veggie Supreme Burger",
+  "type": "veg",
+  "category": "burger",
+  "description": "Veggie Supreme Burger with a side of Veggie Supreme Burger",
+  "image": "https://b.zmtcdn.com/data/dish_photos/56a/b8d6bae2fb9282d08582e1714f9b456a.png?fit=around|130:130&crop=130:130;*,*",
+  "price": 180
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b34"
+  },
+  "id": 39,
+  "name": "Grilled Spicy Lamb Burger",
+  "type": "nveg",
+  "category": "burger",
+  "description": "Grilled Spicy Lamb Burger with a side of Grilled Spicy Lamb Burger",
+  "image": "https://b.zmtcdn.com/data/dish_photos/ea2/3b404811a3baa79ad3efe2197dce2ea2.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 280
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b35"
+  },
+  "id": 40,
+  "name": "Chilli Cheese Chicken Fillet Burger",
+  "type": "nveg",
+  "category": "burger",
+  "description": "Chilli Cheese Chicken Fillet Burger with a side of Chilli Cheese Chicken Fillet Burger",
+  "image": "https://b.zmtcdn.com/data/dish_photos/e08/f0478f524ef3003e2e83aed436cffe08.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 240
+},{
+  "_id": {
+    "$oid": "62fbdc78d3ee7bd133536b36"
+  },
+  "id": 41,
+  "name": "Jumbo Royale Chicken Burger",
+  "type": "nveg",
+  "category": "burger",
+  "description": "Jumbo Royale Chicken Burger with a side of Jumbo Royale Chicken Burger",
+  "image": "https://b.zmtcdn.com/data/dish_photos/75d/e469c8f61760b084eba004d85729275d.jpg?fit=around|130:130&crop=130:130;*,*",
+  "price": 310
+}]
