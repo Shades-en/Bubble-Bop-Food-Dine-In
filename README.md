@@ -53,6 +53,8 @@ py manage.py migrate
 py manage.py runserver
 ```
 
+Load the .json files (table.json, foodmenu.json) into DATABASENAME_table and DATABASENAME_foodmenu.
+
 ## Contributors For Frontend
 * [Adeeb K.M](https://github.com/adeebkm)
 * [Aman Clement](https://github.com/Aman-Clement)
