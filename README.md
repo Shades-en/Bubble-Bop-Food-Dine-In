@@ -1,65 +1,67 @@
+# Bubble Bop - Food Dine In
+A Hotel Management system that takes the orders for each table, based on scanning the QR code available at the table.
 
-# Automated Way of Vehicle Theft Detection in Parking Facilities
+A project for a Hackathon conducted by https://ineuron.ai 
 
-Security of parked cars against theft is a long existing concern.
-We present an automated way of detecting vehicle theft as it happens
-using moving object detection and barcode scanning for each parking entry. The detected edges of the output should give a clear
-image of the moving object from the video. The security personnel or the parking lot operator gets notified about the movement.
+
 ## Installation
 
-The above project has been made with python version==3.11
-
-
-Clone the repo
 ```bash
-  https://github.com/Shades-en/Car-theft-detection-Parking.git
-  cd Car-theft-detection-Parking
+git clone https://github.com/Shades-en/Bubble-Bop-Food-Dine-In.git
+cd ineuron
+pip install -r requirements.txt
+```
+    
+## Usage
+
+(Replace the caps words with appropriate paramenters in the files)
+
+ineuron/settings.py
+```python
+DATABASES = {
+        'default': {
+            'ENGINE': 'djongo',
+            'NAME': 'YOUR_DATABASE_NAME',
+            'CLIENT': {
+                'host': 'CONNECTION_LINK' #YOUR_MONGODB_CONNECTION_LINK
+            }  
+        }
+}
 ```
 
-Create a virtual environment
-```bash
-    py -m venv <environment name>
+dineIn/utils.py
+```python
+client = MongoClient('CONNECTION_LINK',maxPoolSize=50, wTimeoutMS=2500) #atlas connection
+db = client['YOUR_DATABASE_NAME']
+food_collection=db['DATABASENAME_foodmenu']
+user_collection=db['DATABASENAME_user']
+table_collection=db['DATABASENAME_table']
+bill_collection=db['DATABASENAME_bill']
 ```
 
-Install Requirements
-```bash
-    pip install requirements.txt
+dineIn/views.py
+```python
+sender_email = "YOUR_SENDER_EMAIL" # Enter the sender email address
+password = "APP_PASSWORD" #app password
 ```
 
-
-## Usage/Examples
-
-Run the file ``get_first_frame.py`` to generate the first frame.
-
+BASH
 ```bash
-    py get_first_frame.py
+py manage.py makemigrations
+py manage.py migrate
+py manage.py runserver
 ```
 
-Run the file ``ParkingSpacePick.py`` to select the parking spaces by right clicking on image
-(unselect by right clicking the space)
+Load the .json files (table.json, foodmenu.json) into DATABASENAME_table and DATABASENAME_foodmenu.
 
-```bash
-    py ParkingSpacePick.py
-```
-
-Run the file ``parkSpace2.py`` 
-```bash
-    py parkSpace2.py
-```
-
-scan the required barcode(through webcam window) to allow/disallow vehicles with approriate parking space ID
-
-## Key Libraries
+## Contributors For Frontend
+* [Adeeb K.M](https://github.com/adeebkm)
+* [Aman Clement](https://github.com/Aman-Clement)
+* [Lava Kumar Gowda M A](https://github.com/nameisluv)
 
 
-``Open CV``
-``Pyzbar``
+## Tech Stack
 
+**Client:** HTML, CSS, Javascript
 
-
-## Contributing
-
-* [Jeevika Kiran](https://github.com/JeevikaK)
-* [Maitri P Tadas](https://github.com/maitript)
-* [Prapti Bopana](/)
-
+**Server:** Python(Django), MongoDb
